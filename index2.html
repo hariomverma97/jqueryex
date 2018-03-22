@@ -11,8 +11,22 @@
     <header>
         <h1>This is another file</h1>
     </header>
+    <p id="cla"></p>
     <script>
-    
+        $(document).ready(function(){
+            //jQuery("#cla").load('https://learnwebcode.github.io/json-example/animals-1.json');
+            $.getJSON("https://learnwebcode.github.io/json-example/animals-1.json", function(data){
+                console.log(data);
+            });
+            $.ajax({
+                method : 'GET',
+                url : "https://jsonplaceholder.typicode.com/posts",
+                dataType : "json"
+                
+            }).done(function(data){
+                console.log(data);
+            });
+        });
     </script>
 </body>
 </html>
