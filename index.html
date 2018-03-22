@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-</head>
-<body>
-    
     <script src="js/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>HelloWorld</h1>
+    </header>
+    <hr>
+    <div class="container">
+        <h1 id="head1">This is a jquery crash...</h1><br>
+        <p id="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima. Ad tempora magnam reiciendis? Debitis expedita
+            vitae, quaerat sed vero, animi dolorum minus ipsum nisi illum excepturi adipisci eaque consequatur. Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Voluptatem, eos, impedit fuga iusto quam mollitia quisquam <span>explicabo
+            sequi minus optio rerum commodi,</span> unde molestiae veniam ipsa nam sint nostrum natus!
+        </p>
+    </div>
+    <hr>
+    <div class="container">
+        <h1 class="head">This is a jquery crash...</h1><br>
+        <p class="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima. Ad tempora magnam reiciendis? Debitis expedita
+            vitae, quaerat sed vero, animi dolorum minus ipsum nisi illum excepturi adipisci eaque consequatur. Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Voluptatem, eos, impedit fuga iusto quam mollitia quisquam <span>explicabo
+            sequi minus optio rerum commodi,</span> unde molestiae veniam ipsa nam sint nostrum natus!
+        </p>
+        <ul id="list">
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li> 
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>            
+        </ul>
+        <input type="button" value="Button1">
+        <input type="submit" value="Submit">
+        <input type="text" name="text" id=""><br>
+        <a href="http://google.com">Google</a><br>
+        <a href="http://yahoo.com">Yahoo</a>
+    </div>
+    <hr>
+    <button id="th">Click me</button>
+    <script>
+        //$('#head1').hide();
+        //$('p span').css('color', 'red');
+        $('#list li:first').css('color', 'red');
+        $('#list li:even').css('color', 'yellow');
+        $('#list li:nth-child(3n)').css('list-style', 'none');
+        //$(':submit, :button').hide();
+        jQuery('a[href]').css('color', 'red');
+        $('a[href="http://yahoo.com"]').css('background', 'blue');
+        //$('*').hide();
+
+
+    </script>
 </body>
+
 </html>
