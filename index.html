@@ -15,51 +15,73 @@
     </header>
     <hr>
     <div class="container">
-        <h1 id="head1">This is a jquery crash...</h1><br>
+        <h1 id="head1">This is a jquery crash...</h1>
+        <br>
         <p id="para">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima. Ad tempora magnam reiciendis? Debitis expedita
             vitae, quaerat sed vero, animi dolorum minus ipsum nisi illum excepturi adipisci eaque consequatur. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Voluptatem, eos, impedit fuga iusto quam mollitia quisquam <span>explicabo
-            sequi minus optio rerum commodi,</span> unde molestiae veniam ipsa nam sint nostrum natus!
+            dolor, sit amet consectetur adipisicing elit. Voluptatem, eos, impedit fuga iusto quam mollitia quisquam
+            <span>explicabo sequi minus optio rerum commodi,</span> unde molestiae veniam ipsa nam sint nostrum natus!
         </p>
     </div>
     <hr>
     <div class="container">
-        <h1 class="head">This is a jquery crash...</h1><br>
+        <h1 class="head">This is a jquery crash...</h1>
+        <br>
         <p class="para">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima. Ad tempora magnam reiciendis? Debitis expedita
             vitae, quaerat sed vero, animi dolorum minus ipsum nisi illum excepturi adipisci eaque consequatur. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Voluptatem, eos, impedit fuga iusto quam mollitia quisquam <span>explicabo
-            sequi minus optio rerum commodi,</span> unde molestiae veniam ipsa nam sint nostrum natus!
+            dolor, sit amet consectetur adipisicing elit. Voluptatem, eos, impedit fuga iusto quam mollitia quisquam
+            <span>explicabo sequi minus optio rerum commodi,</span> unde molestiae veniam ipsa nam sint nostrum natus!
         </p>
         <ul id="list">
             <li>List Item</li>
             <li>List Item</li>
-            <li>List Item</li> 
             <li>List Item</li>
             <li>List Item</li>
-            <li>List Item</li>            
+            <li>List Item</li>
+            <li>List Item</li>
         </ul>
-        <input type="button" value="Button1">
+        <!--<input type="button" value="Button1">
         <input type="submit" value="Submit">
         <input type="text" name="text" id=""><br>
         <a href="http://google.com">Google</a><br>
-        <a href="http://yahoo.com">Yahoo</a>
+        <a href="http://yahoo.com">Yahoo</a>-->
     </div>
     <hr>
+    <button id="th1">Click me agai</button>
+    <br>
     <button id="th">Click me</button>
+
     <script>
-        //$('#head1').hide();
-        //$('p span').css('color', 'red');
-        $('#list li:first').css('color', 'red');
-        $('#list li:even').css('color', 'yellow');
-        $('#list li:nth-child(3n)').css('list-style', 'none');
-        //$(':submit, :button').hide();
-        jQuery('a[href]').css('color', 'red');
-        $('a[href="http://yahoo.com"]').css('background', 'blue');
-        //$('*').hide();
-
-
+        /* //$('#head1').hide();
+         //$('p span').css('color', 'red');
+         $('#list li:first').css('color', 'red');
+         $('#list li:even').css('color', 'yellow');
+         $('#list li:nth-child(3n)').css('list-style', 'none');
+         //$(':submit, :button').hide();
+         jQuery('a[href]').css('color', 'red');
+         $('a[href="http://yahoo.com"]').css('background', 'blue');
+         //$('*').hide();*/
+         $(document).ready(function () {
+            $('#th1').click(function () {
+                alert("HelloWorld");
+            });
+        });
+        //on('click, fun')
+        $('#th').on('dblclick', function(){
+            alert('double click');
+        })
+        $('#th1').on('dblclick', function(){
+            $('#para').toggle();
+        })
+        $('*').dblclick(function(){
+            alert('helloWorld');
+        })
+       /* $(".para").hover(function(){
+            alert("hovered");
+        })*/
+        
     </script>
 </body>
 
