@@ -9,7 +9,7 @@
     <script src="js/jquery-3.2.1.js"></script>
 </head>
 
-<body>
+<body id="body">
     <header>
         <h1>HelloWorld</h1>
     </header>
@@ -34,6 +34,7 @@
             dolor, sit amet consectetur adipisicing elit. Voluptatem, eos, impedit fuga iusto quam mollitia quisquam
             <span>explicabo sequi minus optio rerum commodi,</span> unde molestiae veniam ipsa nam sint nostrum natus!
         </p>
+        <input type="text" id="items">
         <ul id="list">
             <li>List Item</li>
             <li>List Item</li>
@@ -41,7 +42,26 @@
             <li>List Item</li>
             <li>List Item</li>
             <li>List Item</li>
-        </ul>
+        </ul><hr>
+        <ul id="iddd">
+
+        </ul><hr>
+        <form action="this.php" id="def">
+            <label for="username">Name</label>
+            <br>
+            <input type="text" name="username" id="names">
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="email" id="emails">
+            <br>
+            <select name="Select" id="select">
+                <option value="Male">Male</option>
+                <option value="GMale">Gmale</option>
+            </select>
+            <br>
+            <input type="submit" value="Submit" id="submit">
+        </form>
         <!--<input type="button" value="Button1">
         <input type="submit" value="Submit">
         <input type="text" name="text" id=""><br>
@@ -52,8 +72,30 @@
     <button id="th1">Click me agai</button>
     <br>
     <button id="th">Click me</button>
+    <hr>
+    <div class="box"></div>
+    <style>
+    .box{
+        height: 100px;
+        width: 100px;
+        background: red;
+        box-shadow: 10px 0px 10px black;
+        position: relative;
+    }
+    </style>
 
     <script>
+        $(document).ready(function () {
+            $('#para').css({background: 'red', color: 'blue'});
+            $('.para').addClass("alerts");
+            //$("#list li").prepend("HelloWorld");
+            $(".para").appendTo("#list");
+        }
+        );
+        //document.getElementById('body').setAttribute("class", "names");
+
+
+
         /* //$('#head1').hide();
          //$('p span').css('color', 'red');
          $('#list li:first').css('color', 'red');
@@ -62,26 +104,64 @@
          //$(':submit, :button').hide();
          jQuery('a[href]').css('color', 'red');
          $('a[href="http://yahoo.com"]').css('background', 'blue');
-         //$('*').hide();*/
-         $(document).ready(function () {
-            $('#th1').click(function () {
-                alert("HelloWorld");
+         //$('*').hide();
+        $(document).ready(function () {
+            $('#th1').click(function (e) {
+                console.log(e);
+                console.clear();
+                console.log(e.currentTarget.id);
+                console.log(e.currentTarget.innerHTML);
             });
         });
         //on('click, fun')
-        $('#th').on('dblclick', function(){
+        $('#th').on('dblclick', function () {
             alert('double click');
         })
-        $('#th1').on('dblclick', function(){
+        $('#th1').on('dblclick', function () {
             $('#para').toggle();
         })
-        $('*').dblclick(function(){
+        $('*').dblclick(function () {
             alert('helloWorld');
-        })
-       /* $(".para").hover(function(){
-            alert("hovered");
+        });
+        /* $(".para").hover(function(){
+             alert("hovered");
+         })
+        $(document).ready(function () {
+            var x = document.getElementById('body');
+            x.onmousemove = function (e) {
+                console.log(e.clientX+" "+e.clientY);
+            }
+        });
+        $('select').change(function(e){
+            console.log(e.target.value);
+        });
+        $('#def').submit(function(e){
+            e.preventDefault();
+            console.log("sumited");
         })*/
-        
+       // $('p').wrapAll('h1');
+       $('#items').keyup(function(e){
+           var code = e.which;
+           if(code == 13){
+               $('ul').append('<li>'+e.target.value+'</li>');
+           }
+       });
+       var xc = ["banana", "havana", "nanana", "dhjshd"];
+       $.each(xc, function(i, value){
+            $("#iddd").append("<li>"+value+"</li>");
+       })
+       var vala = $("#list li").toArray();
+       $.each(vala, function(e, value){
+           console.log(value.innerHTML+e);
+       })
+       $('.box').click(function() {
+           $('.box').animate({
+               left: 100,
+               height: '210px',
+               width: '210px',
+               opacity: 0.5
+           });
+       });
     </script>
 </body>
 
